@@ -52,4 +52,4 @@ Publishing lets every Chrome you sign in to install and update the extension, wi
 
 ## Develop
 
-`make test` runs the unit tests (Node.js 22 or later).
+`make test` runs the unit tests (Node.js 22 or later), and `npm ci && npm run format` formats everything with Prettier. Check `Continuous Integration` (`.tekton/ci.yaml`, run by Octomaton) runs both on every pull request and in the merge queue.
