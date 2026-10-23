@@ -1,0 +1,12 @@
+apiVersion: octomaton.dev/v1
+pipelines:
+  - name: ci
+    displayName: Continuous Integration
+    pipelineRun: .tekton/ci.yaml
+    on:
+      # Every pull request, whatever its base, so a stacked one is checked before it reaches main.
+      pull_request: {}
+      merge_group: {}
+    params:
+      repo-url: "{{ .Repository.CloneURL }}"
+      revision: "{{ .Revision }}"
