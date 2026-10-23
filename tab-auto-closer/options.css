@@ -1,0 +1,137 @@
+:root {
+  color-scheme: light dark;
+  --fg: #1f2937;
+  --muted: #6b7280;
+  --bg: #fff;
+  --border: #d1d5db;
+  --accent: #3b5bdb;
+  --ok: #2f9e44;
+  --error: #e03131;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e5e7eb;
+    --muted: #9ca3af;
+    --bg: #111827;
+    --border: #374151;
+    --accent: #748ffc;
+    --ok: #69db7c;
+    --error: #ff8787;
+  }
+}
+
+body {
+  margin: 0;
+  font:
+    15px/1.5 system-ui,
+    sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+h2 {
+  margin: 32px 0 8px;
+  font-size: 18px;
+}
+
+.lead,
+.hint {
+  color: var(--muted);
+}
+
+.hint {
+  margin: 4px 0 20px;
+  font-size: 13px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  font:
+    14px/1.5 ui-monospace,
+    monospace;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+input {
+  width: 120px;
+}
+
+a {
+  color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  font: inherit;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.secondary {
+  color: var(--accent);
+  background: transparent;
+}
+
+#status.error {
+  color: var(--error);
+}
+
+#access {
+  padding: 0;
+  list-style: none;
+}
+
+#access li {
+  padding: 4px 0;
+  font:
+    14px/1.5 ui-monospace,
+    monospace;
+}
+
+#access .granted::before {
+  content: "✓ ";
+  color: var(--ok);
+}
+
+#access .denied::before {
+  content: "✗ ";
+  color: var(--error);
+}
+
+#access .denied::after {
+  content: " (no access: save to grant it)";
+  font-family: system-ui, sans-serif;
+  color: var(--muted);
+}

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Auto-Closer",
+  "version": "1.0.0",
+  "description": "Closes tabs whose address matches your patterns, such as Slack's \"open in app\" pages, a few seconds after they load.",
+  "minimum_chrome_version": "110",
+  "permissions": ["storage", "scripting"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Tab Auto-Closer options",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
+}
